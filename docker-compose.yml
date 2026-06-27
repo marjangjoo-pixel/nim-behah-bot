@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  bot:
+    build: .
+    container_name: nim-behah-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - temp_files:/tmp/nim-behah-bot
+    environment:
+      - TEMP_DIR=/tmp/nim-behah-bot
+
+volumes:
+  temp_files:
